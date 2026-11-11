@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "name": "Keep README and Kiro log in sync with specs",
+  "description": "When a spec changes, update the README feature list and log the change for the hackathon write-up.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [".kiro/specs/**/*.md"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A spec changed. 1) Update the Features section of README.md if user-facing behaviour changed. 2) Append a dated entry to docs/KIRO_USAGE.md under 'Spec-driven development' describing what changed and why, in 2-3 sentences."
+  }
+}

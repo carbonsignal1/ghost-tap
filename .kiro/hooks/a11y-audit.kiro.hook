@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "name": "Accessibility review on UI change",
+  "description": "Review changed UI files against the accessibility steering rules.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["src/ui/**/*.tsx", "src/ui/**/*.css"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Review the edited UI file against .kiro/steering/accessibility.md. Check contrast in both normal and high-contrast themes, reduced-motion handling, no flashing over 3 per second, ARIA live regions for decoded text, and single-switch reachability. List violations with line numbers and fix them."
+  }
+}

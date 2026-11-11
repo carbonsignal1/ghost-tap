@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Pre-commit check (manual)",
+  "description": "Run the full test suite, e2e accessibility tests and a production build before committing.",
+  "version": "1",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Run `npm test`, `npm run test:e2e` and `npm run build`. Summarise failures, fix them, and suggest a concise commit message describing the change."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "name": "Run related tests on save",
+  "description": "When a core TypeScript file changes, run its unit and property tests and fix failures.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["src/morse/**/*.ts", "src/prediction/**/*.ts"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A core module was edited. Run `npx vitest run` for the tests next to the changed file (including *.property.test.ts). If a property test fails, report the shrunk counterexample, explain which requirement it violates, and propose a fix. Do not weaken a property to make it pass."
+  }
+}
